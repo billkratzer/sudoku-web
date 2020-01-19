@@ -1,230 +1,3 @@
-class Tick {
-    constructor(number) {
-        this.number = number;
-        this.ticked = false;
-    }
-
-}
-
-class LittleSquare {
-    constructor() {
-        this.guess = "";
-        this.clue = false;
-        this.ticks = new Array();
-        for (var n = 1; n <= 9; n++) {
-            this.ticks.push(new Tick(n.toString()));
-        }
-    }
-
-    setClue ( n ) {
-        if ( n == "." ) {
-            this.guess = "";
-            this.clue = false;
-        }
-        else {
-            this.guess = n.toString();
-            this.clue = true;
-        }
-
-    }
-}
-
-class BigSquare {
-    constructor() {
-        this.squares = new Array();
-        for (var i = 0; i < 9; i++) {
-            var square = new LittleSquare();
-            this.squares.push(square);
-        }
-    }
-
-    buildOneThruNine() {
-        var values = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-        return values;
-    }
-
-    solved() {
-        var values = this.buildOneThruNine();
-        for (var i = 0; i < 9; i++) {
-            var square = this.squares[i];
-            values.remove(square.guess);
-        }
-        return values.length() == 0;
-    }
-
-    getRowByIndex( rowIndex ) {
-        let row = new Array();
-
-        for (let i = 0; i < 3; i++) {
-            row.push( this.squares[ rowIndex * 3 + i].guess );
-        }
-
-        return row;
-    }
-
-    getColumnByIndex( columnIndex ) {
-        let column = new Array();
-
-        for (let i = 0; i < 3; i++) {
-            column.push( this.squares[ i * 3 + columnIndex].guess );
-        }
-
-        return column;
-    }
-
-    canPlayNumber(n, minor) {
-        if (!n) {
-            return false;
-        }
-
-        let zMinor = minor - 1;
-        if ( this.squares[ zMinor ].clue ) {
-            return false;
-        }
-
-        for (var i = 0; i < 9; i++) {
-            if (n == this.squares[i].guess) {
-                return  false;
-            }
-        }
-
-        return true;
-    }
-
-    playNumber(n, minor) {
-        let zMinor = minor - 1;
-        this.squares[ zMinor ].guess = n;
-    }
-
-    setClue(n, minor) {
-        let zMinor = minor - 1;
-        this.squares[ zMinor ].setClue( n );
-    }
-
-    eraseSquare(minor) {
-        let zMinor = minor - 1;
-        this.squares[ zMinor ].guess = "";
-    }
-}
-
-class Board {
-    constructor(puzzle) {
-        this.squares = new Array();
-        for (var i = 0; i < 9; i++) {
-            var square = new BigSquare();
-            this.squares.push(square);
-        }
-
-        for (var i = 0; i < puzzle.length; i++) {
-            let y = Math.floor(i / 9);
-            let x = i - y * 9;
-
-            let cart = fromCartesianToSquare(x, y);
-            this.setClue( puzzle[i], cart.major, cart.minor);
-        }
-    }
-
-    solved() {
-        for (var i = 0; i < 9; i++) {
-            var square = this.squares[0];
-            if (!square.solved()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    getRowForMajorAndMinor(major, minor) {
-        let values = new Array();
-        let rowIndex = Math.floor(minor / 3);
-        if ( ( major >= 1 ) && ( major <=3 ) ) {
-            values.push( this.squares[0].getRowByIndex( rowIndex ) );
-            values.push( this.squares[1].getRowByIndex( rowIndex ) );
-            values.push( this.squares[2].getRowByIndex( rowIndex ) );
-        }
-        else if ( ( major >= 4 ) && ( major <=6 ) ) {
-            values.push( this.squares[3].getRowByIndex( rowIndex ) );
-            values.push( this.squares[4].getRowByIndex( rowIndex ) );
-            values.push( this.squares[5].getRowByIndex( rowIndex ) );
-        }
-        else if ( ( major >= 7 ) && ( major <= 9 ) ) {
-            values.push( this.squares[6].getRowByIndex( rowIndex ) );
-            values.push( this.squares[7].getRowByIndex( rowIndex ) );
-            values.push( this.squares[8].getRowByIndex( rowIndex ) );
-        }
-        else {
-            return [];
-        }
-
-        return values.flat();
-    }
-
-    getColumnForMajorAndMinor(major, minor) {
-        let values = new Array();
-        let columnIndex = minor % 3;
-        if ( ( major == 1 ) || ( major == 4 ) || ( major == 7 ) ) {
-            values.push( this.squares[0].getColumnByIndex( columnIndex ) );
-            values.push( this.squares[1].getColumnByIndex( columnIndex ) );
-            values.push( this.squares[2].getColumnByIndex( columnIndex ) );
-        }
-        else if ( ( major == 2 ) || ( major == 5 ) || ( major == 8 ) ) {
-            values.push( this.squares[3].getColumnByIndex( columnIndex ) );
-            values.push( this.squares[4].getColumnByIndex( columnIndex ) );
-            values.push( this.squares[5].getColumnByIndex( columnIndex ) );
-        }
-        else if ( ( major == 3 ) || ( major == 6 ) || ( major == 9 ) ) {
-            values.push( this.squares[6].getColumnByIndex( columnIndex ) );
-            values.push( this.squares[7].getColumnByIndex( columnIndex ) );
-            values.push( this.squares[8].getColumnByIndex( columnIndex ) );
-        }
-        else {
-            return [];
-        }
-
-        return values.flat();
-    }
-
-    canPlayNumber(n, major, minor) {
-        let zMajor = major - 1;
-
-        let canPlayWithInSquare = this.squares[ zMajor ].canPlayNumber( n, minor );
-        if ( !canPlayWithInSquare ) {
-            return false;
-        }
-
-        var row = this.getRowForMajorAndMinor(major, minor);
-        if ( row.indexOf( n.toString() ) >= 0 ) {
-            return false;
-        }
-
-        var column = this.getColumnForMajorAndMinor(major, minor);
-        if ( column.indexOf( n.toString() ) >= 0 ) {
-            return  false;
-        }
-
-        return true;
-    }
-
-    getLittleSquareAtMajorMinor(major, minor) {
-        return this.squares[ major - 1 ].squares[ minor - 1];
-    }
-
-    playNumber(n, major, minor) {
-        let zMajor = major - 1;
-        this.squares[ zMajor ].playNumber( n, minor );
-    }
-
-    setClue(n, major, minor) {
-        let zMajor = major - 1;
-        this.squares[ zMajor ].setClue( n, minor );
-    }
-
-    eraseSquare(major, minor) {
-        let zMajor = major - 1;
-        this.squares[ zMajor ].eraseSquare( minor );
-    }
-}
-
 var board;
 
 var selectedId;
@@ -352,7 +125,6 @@ function moveDown() {
     }
     let mm = fromCartesianToSquare(x, y);
     setSelectedId("square_" + mm.major.toString() + "_" + mm.minor.toString());
-    $( id ).html( "" );
 
 }
 
@@ -371,9 +143,19 @@ function playNumber( n ) {
         board.playNumber( n.toString(), major, minor );
         let id = '#guess_' + major.toString() + "_" + minor.toString();
         $( id ).html( n.toString() );
+        $( id ).addClass( "guess" );
+
+        // Hide the tick marks
+        let tickSelector = "#square_" + major + "_" + minor + " .tick";
+        $( tickSelector ).hide();
+
     }
     else {
         console.log("Can NOT Play " + n.toString() + "!");
+    }
+
+    if ( board.solved() ) {
+        alert("solved!");
     }
 }
 
@@ -390,7 +172,14 @@ function eraseSquare() {
 
     board.eraseSquare(major, minor);
     let id = '#guess_' + major.toString() + "_" + minor.toString();
+
+    // Empty the square
     $( id ).html( "" );
+    $( id ).removeClass( "guess" );
+
+    // Show the tick marks
+    let tickSelector = "#square_" + major + "_" + minor + " .tick";
+    $( tickSelector ).show();
 }
 
 function drawBoard() {
