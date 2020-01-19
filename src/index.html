@@ -1,0 +1,1680 @@
+<html>
+<head>
+    <title>Sudoku Web</title>
+    <link rel="stylesheet" href="/css/game.css"/>
+    <script src="/js/vendor/jquery-3.4.1.min.js"></script>
+    <script src="/js/game.js"></script>
+</head>
+<body>
+<header>
+
+</header>
+<div id="game_area">
+    <div id="board" tabindex="0">
+        <div class="big_row">
+            <div id="square_1" class="big_square">
+                <div class="little_row">
+                    <div id="square_1_1" class="little_square">
+                        <div id="guess_1_1" class="guess">1</div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_1_1" class="tick">1</div>
+                                <div id="tick_1_1_2" class="tick">2</div>
+                                <div id="tick_1_1_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_1_4" class="tick">4</div>
+                                <div id="tick_1_1_5" class="tick">5</div>
+                                <div id="tick_1_1_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_1_7" class="tick">7</div>
+                                <div id="tick_1_1_8" class="tick">8</div>
+                                <div id="tick_1_1_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="square_1_2" class="little_square">
+                        <div id="guess_1_2" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_2_1" class="tick">1</div>
+                                <div id="tick_1_2_2" class="tick">2</div>
+                                <div id="tick_1_2_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_2_4" class="tick">4</div>
+                                <div id="tick_1_2_5" class="tick">5</div>
+                                <div id="tick_1_2_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_2_7" class="tick">7</div>
+                                <div id="tick_1_2_8" class="tick">8</div>
+                                <div id="tick_1_2_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="square_1_3" class="little_square">
+                        <div id="guess_1_3" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_3_1" class="tick">1</div>
+                                <div id="tick_1_3_2" class="tick">2</div>
+                                <div id="tick_1_3_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_3_4" class="tick">4</div>
+                                <div id="tick_1_3_5" class="tick">5</div>
+                                <div id="tick_1_3_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_3_7" class="tick">7</div>
+                                <div id="tick_1_3_8" class="tick">8</div>
+                                <div id="tick_1_3_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="little_row">
+                    <div id="square_1_4" class="little_square">
+                        <div id="guess_1_4" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_4_1" class="tick">1</div>
+                                <div id="tick_1_4_2" class="tick">2</div>
+                                <div id="tick_1_4_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_4_4" class="tick">4</div>
+                                <div id="tick_1_4_5" class="tick">5</div>
+                                <div id="tick_1_4_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_4_7" class="tick">7</div>
+                                <div id="tick_1_4_8" class="tick">8</div>
+                                <div id="tick_1_4_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="square_1_5" class="little_square">
+                        <div id="guess_1_5" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_5_1" class="tick">1</div>
+                                <div id="tick_1_5_2" class="tick">2</div>
+                                <div id="tick_1_5_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_5_4" class="tick">4</div>
+                                <div id="tick_1_5_5" class="tick">5</div>
+                                <div id="tick_1_5_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_5_7" class="tick">7</div>
+                                <div id="tick_1_5_8" class="tick">8</div>
+                                <div id="tick_1_5_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="square_1_6" class="little_square">
+                        <div id="guess_1_6" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_6_1" class="tick">1</div>
+                                <div id="tick_1_6_2" class="tick">2</div>
+                                <div id="tick_1_6_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_6_4" class="tick">4</div>
+                                <div id="tick_1_6_5" class="tick">5</div>
+                                <div id="tick_1_6_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_6_7" class="tick">7</div>
+                                <div id="tick_1_6_8" class="tick">8</div>
+                                <div id="tick_1_6_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="little_row">
+                    <div id="square_1_7" class="little_square">
+                        <div id="guess_1_7" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_7_1" class="tick">1</div>
+                                <div id="tick_1_7_2" class="tick">2</div>
+                                <div id="tick_1_7_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_7_4" class="tick">4</div>
+                                <div id="tick_1_7_5" class="tick">5</div>
+                                <div id="tick_1_7_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_7_7" class="tick">7</div>
+                                <div id="tick_1_7_8" class="tick">8</div>
+                                <div id="tick_1_7_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="square_1_8" class="little_square">
+                        <div id="guess_1_8" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_8_1" class="tick">1</div>
+                                <div id="tick_1_8_2" class="tick">2</div>
+                                <div id="tick_1_8_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_8_4" class="tick">4</div>
+                                <div id="tick_1_8_5" class="tick">5</div>
+                                <div id="tick_1_8_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_8_7" class="tick">7</div>
+                                <div id="tick_1_8_8" class="tick">8</div>
+                                <div id="tick_1_8_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="square_1_9" class="little_square">
+                        <div id="guess_1_9" class="guess"></div>
+                        <div class="ticks_container">
+                            <div class="tick_row">
+                                <div id="tick_1_9_1" class="tick">1</div>
+                                <div id="tick_1_9_2" class="tick">2</div>
+                                <div id="tick_1_9_3" class="tick">3</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_9_4" class="tick">4</div>
+                                <div id="tick_1_9_5" class="tick">5</div>
+                                <div id="tick_1_9_6" class="tick">6</div>
+                            </div>
+                            <div class="tick_row">
+                                <div id="tick_1_9_7" class="tick">7</div>
+                                <div id="tick_1_9_8" class="tick">8</div>
+                                <div id="tick_1_9_9" class="tick">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="square_2" class="big_square">
+                <div id="square_2_1" class="little_square">
+                    <div id="guess_2_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_1_1" class="tick">1</div>
+                            <div id="tick_2_1_2" class="tick">2</div>
+                            <div id="tick_2_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_1_4" class="tick">4</div>
+                            <div id="tick_2_1_5" class="tick">5</div>
+                            <div id="tick_2_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_1_7" class="tick">7</div>
+                            <div id="tick_2_1_8" class="tick">8</div>
+                            <div id="tick_2_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_2" class="little_square">
+                    <div id="guess_2_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_2_1" class="tick">1</div>
+                            <div id="tick_2_2_2" class="tick">2</div>
+                            <div id="tick_2_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_2_4" class="tick">4</div>
+                            <div id="tick_2_2_5" class="tick">5</div>
+                            <div id="tick_2_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_2_7" class="tick">7</div>
+                            <div id="tick_2_2_8" class="tick">8</div>
+                            <div id="tick_2_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_3" class="little_square">
+                    <div id="guess_2_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_3_1" class="tick">1</div>
+                            <div id="tick_2_3_2" class="tick">2</div>
+                            <div id="tick_2_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_3_4" class="tick">4</div>
+                            <div id="tick_2_3_5" class="tick">5</div>
+                            <div id="tick_2_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_3_7" class="tick">7</div>
+                            <div id="tick_2_3_8" class="tick">8</div>
+                            <div id="tick_2_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_4" class="little_square">
+                    <div id="guess_2_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_4_1" class="tick">1</div>
+                            <div id="tick_2_4_2" class="tick">2</div>
+                            <div id="tick_2_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_4_4" class="tick">4</div>
+                            <div id="tick_2_4_5" class="tick">5</div>
+                            <div id="tick_2_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_4_7" class="tick">7</div>
+                            <div id="tick_2_4_8" class="tick">8</div>
+                            <div id="tick_2_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_5" class="little_square">
+                    <div id="guess_2_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_5_1" class="tick">1</div>
+                            <div id="tick_2_5_2" class="tick">2</div>
+                            <div id="tick_2_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_5_4" class="tick">4</div>
+                            <div id="tick_2_5_5" class="tick">5</div>
+                            <div id="tick_2_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_5_7" class="tick">7</div>
+                            <div id="tick_2_5_8" class="tick">8</div>
+                            <div id="tick_2_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_6" class="little_square">
+                    <div id="guess_2_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_6_1" class="tick">1</div>
+                            <div id="tick_2_6_2" class="tick">2</div>
+                            <div id="tick_2_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_6_4" class="tick">4</div>
+                            <div id="tick_2_6_5" class="tick">5</div>
+                            <div id="tick_2_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_6_7" class="tick">7</div>
+                            <div id="tick_2_6_8" class="tick">8</div>
+                            <div id="tick_2_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_7" class="little_square">
+                    <div id="guess_2_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_7_1" class="tick">1</div>
+                            <div id="tick_2_7_2" class="tick">2</div>
+                            <div id="tick_2_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_7_4" class="tick">4</div>
+                            <div id="tick_2_7_5" class="tick">5</div>
+                            <div id="tick_2_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_7_7" class="tick">7</div>
+                            <div id="tick_2_7_8" class="tick">8</div>
+                            <div id="tick_2_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_8" class="little_square">
+                    <div id="guess_2_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_8_1" class="tick">1</div>
+                            <div id="tick_2_8_2" class="tick">2</div>
+                            <div id="tick_2_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_8_4" class="tick">4</div>
+                            <div id="tick_2_8_5" class="tick">5</div>
+                            <div id="tick_2_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_8_7" class="tick">7</div>
+                            <div id="tick_2_8_8" class="tick">8</div>
+                            <div id="tick_2_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_2_9" class="little_square">
+                    <div id="guess_2_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_2_9_1" class="tick">1</div>
+                            <div id="tick_2_9_2" class="tick">2</div>
+                            <div id="tick_2_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_9_4" class="tick">4</div>
+                            <div id="tick_2_9_5" class="tick">5</div>
+                            <div id="tick_2_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_2_9_7" class="tick">7</div>
+                            <div id="tick_2_9_8" class="tick">8</div>
+                            <div id="tick_2_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="square_3" class="big_square">
+                <div id="square_3_1" class="little_square">
+                    <div id="guess_3_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_1_1" class="tick">1</div>
+                            <div id="tick_3_1_2" class="tick">2</div>
+                            <div id="tick_3_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_1_4" class="tick">4</div>
+                            <div id="tick_3_1_5" class="tick">5</div>
+                            <div id="tick_3_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_1_7" class="tick">7</div>
+                            <div id="tick_3_1_8" class="tick">8</div>
+                            <div id="tick_3_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_2" class="little_square">
+                    <div id="guess_3_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_2_1" class="tick">1</div>
+                            <div id="tick_3_2_2" class="tick">2</div>
+                            <div id="tick_3_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_2_4" class="tick">4</div>
+                            <div id="tick_3_2_5" class="tick">5</div>
+                            <div id="tick_3_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_2_7" class="tick">7</div>
+                            <div id="tick_3_2_8" class="tick">8</div>
+                            <div id="tick_3_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_3" class="little_square">
+                    <div id="guess_3_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_3_1" class="tick">1</div>
+                            <div id="tick_3_3_2" class="tick">2</div>
+                            <div id="tick_3_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_3_4" class="tick">4</div>
+                            <div id="tick_3_3_5" class="tick">5</div>
+                            <div id="tick_3_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_3_7" class="tick">7</div>
+                            <div id="tick_3_3_8" class="tick">8</div>
+                            <div id="tick_3_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_4" class="little_square">
+                    <div id="guess_3_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_4_1" class="tick">1</div>
+                            <div id="tick_3_4_2" class="tick">2</div>
+                            <div id="tick_3_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_4_4" class="tick">4</div>
+                            <div id="tick_3_4_5" class="tick">5</div>
+                            <div id="tick_3_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_4_7" class="tick">7</div>
+                            <div id="tick_3_4_8" class="tick">8</div>
+                            <div id="tick_3_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_5" class="little_square">
+                    <div id="guess_3_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_5_1" class="tick">1</div>
+                            <div id="tick_3_5_2" class="tick">2</div>
+                            <div id="tick_3_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_5_4" class="tick">4</div>
+                            <div id="tick_3_5_5" class="tick">5</div>
+                            <div id="tick_3_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_5_7" class="tick">7</div>
+                            <div id="tick_3_5_8" class="tick">8</div>
+                            <div id="tick_3_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_6" class="little_square">
+                    <div id="guess_3_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_6_1" class="tick">1</div>
+                            <div id="tick_3_6_2" class="tick">2</div>
+                            <div id="tick_3_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_6_4" class="tick">4</div>
+                            <div id="tick_3_6_5" class="tick">5</div>
+                            <div id="tick_3_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_6_7" class="tick">7</div>
+                            <div id="tick_3_6_8" class="tick">8</div>
+                            <div id="tick_3_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_7" class="little_square">
+                    <div id="guess_3_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_7_1" class="tick">1</div>
+                            <div id="tick_3_7_2" class="tick">2</div>
+                            <div id="tick_3_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_7_4" class="tick">4</div>
+                            <div id="tick_3_7_5" class="tick">5</div>
+                            <div id="tick_3_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_7_7" class="tick">7</div>
+                            <div id="tick_3_7_8" class="tick">8</div>
+                            <div id="tick_3_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_8" class="little_square">
+                    <div id="guess_3_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_8_1" class="tick">1</div>
+                            <div id="tick_3_8_2" class="tick">2</div>
+                            <div id="tick_3_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_8_4" class="tick">4</div>
+                            <div id="tick_3_8_5" class="tick">5</div>
+                            <div id="tick_3_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_8_7" class="tick">7</div>
+                            <div id="tick_3_8_8" class="tick">8</div>
+                            <div id="tick_3_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_3_9" class="little_square">
+                    <div id="guess_3_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_3_9_1" class="tick">1</div>
+                            <div id="tick_3_9_2" class="tick">2</div>
+                            <div id="tick_3_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_9_4" class="tick">4</div>
+                            <div id="tick_3_9_5" class="tick">5</div>
+                            <div id="tick_3_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_3_9_7" class="tick">7</div>
+                            <div id="tick_3_9_8" class="tick">8</div>
+                            <div id="tick_3_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="big_row">
+            <div id="square_4" class="big_square">
+                <div id="square_4_1" class="little_square">
+                    <div id="guess_4_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_1_1" class="tick">1</div>
+                            <div id="tick_4_1_2" class="tick">2</div>
+                            <div id="tick_4_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_1_4" class="tick">4</div>
+                            <div id="tick_4_1_5" class="tick">5</div>
+                            <div id="tick_4_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_1_7" class="tick">7</div>
+                            <div id="tick_4_1_8" class="tick">8</div>
+                            <div id="tick_4_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_2" class="little_square">
+                    <div id="guess_4_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_2_1" class="tick">1</div>
+                            <div id="tick_4_2_2" class="tick">2</div>
+                            <div id="tick_4_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_2_4" class="tick">4</div>
+                            <div id="tick_4_2_5" class="tick">5</div>
+                            <div id="tick_4_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_2_7" class="tick">7</div>
+                            <div id="tick_4_2_8" class="tick">8</div>
+                            <div id="tick_4_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_3" class="little_square">
+                    <div id="guess_4_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_3_1" class="tick">1</div>
+                            <div id="tick_4_3_2" class="tick">2</div>
+                            <div id="tick_4_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_3_4" class="tick">4</div>
+                            <div id="tick_4_3_5" class="tick">5</div>
+                            <div id="tick_4_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_3_7" class="tick">7</div>
+                            <div id="tick_4_3_8" class="tick">8</div>
+                            <div id="tick_4_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_4" class="little_square">
+                    <div id="guess_4_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_4_1" class="tick">1</div>
+                            <div id="tick_4_4_2" class="tick">2</div>
+                            <div id="tick_4_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_4_4" class="tick">4</div>
+                            <div id="tick_4_4_5" class="tick">5</div>
+                            <div id="tick_4_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_4_7" class="tick">7</div>
+                            <div id="tick_4_4_8" class="tick">8</div>
+                            <div id="tick_4_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_5" class="little_square">
+                    <div id="guess_4_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_5_1" class="tick">1</div>
+                            <div id="tick_4_5_2" class="tick">2</div>
+                            <div id="tick_4_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_5_4" class="tick">4</div>
+                            <div id="tick_4_5_5" class="tick">5</div>
+                            <div id="tick_4_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_5_7" class="tick">7</div>
+                            <div id="tick_4_5_8" class="tick">8</div>
+                            <div id="tick_4_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_6" class="little_square">
+                    <div id="guess_4_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_6_1" class="tick">1</div>
+                            <div id="tick_4_6_2" class="tick">2</div>
+                            <div id="tick_4_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_6_4" class="tick">4</div>
+                            <div id="tick_4_6_5" class="tick">5</div>
+                            <div id="tick_4_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_6_7" class="tick">7</div>
+                            <div id="tick_4_6_8" class="tick">8</div>
+                            <div id="tick_4_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_7" class="little_square">
+                    <div id="guess_4_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_7_1" class="tick">1</div>
+                            <div id="tick_4_7_2" class="tick">2</div>
+                            <div id="tick_4_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_7_4" class="tick">4</div>
+                            <div id="tick_4_7_5" class="tick">5</div>
+                            <div id="tick_4_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_7_7" class="tick">7</div>
+                            <div id="tick_4_7_8" class="tick">8</div>
+                            <div id="tick_4_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_8" class="little_square">
+                    <div id="guess_4_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_8_1" class="tick">1</div>
+                            <div id="tick_4_8_2" class="tick">2</div>
+                            <div id="tick_4_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_8_4" class="tick">4</div>
+                            <div id="tick_4_8_5" class="tick">5</div>
+                            <div id="tick_4_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_8_7" class="tick">7</div>
+                            <div id="tick_4_8_8" class="tick">8</div>
+                            <div id="tick_4_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_4_9" class="little_square">
+                    <div id="guess_4_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_4_9_1" class="tick">1</div>
+                            <div id="tick_4_9_2" class="tick">2</div>
+                            <div id="tick_4_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_9_4" class="tick">4</div>
+                            <div id="tick_4_9_5" class="tick">5</div>
+                            <div id="tick_4_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_4_9_7" class="tick">7</div>
+                            <div id="tick_4_9_8" class="tick">8</div>
+                            <div id="tick_4_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="square_5" class="big_square">
+                <div id="square_5_1" class="little_square">
+                    <div id="guess_5_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_1_1" class="tick">1</div>
+                            <div id="tick_5_1_2" class="tick">2</div>
+                            <div id="tick_5_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_1_4" class="tick">4</div>
+                            <div id="tick_5_1_5" class="tick">5</div>
+                            <div id="tick_5_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_1_7" class="tick">7</div>
+                            <div id="tick_5_1_8" class="tick">8</div>
+                            <div id="tick_5_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_2" class="little_square">
+                    <div id="guess_5_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_2_1" class="tick">1</div>
+                            <div id="tick_5_2_2" class="tick">2</div>
+                            <div id="tick_5_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_2_4" class="tick">4</div>
+                            <div id="tick_5_2_5" class="tick">5</div>
+                            <div id="tick_5_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_2_7" class="tick">7</div>
+                            <div id="tick_5_2_8" class="tick">8</div>
+                            <div id="tick_5_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_3" class="little_square">
+                    <div id="guess_5_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_3_1" class="tick">1</div>
+                            <div id="tick_5_3_2" class="tick">2</div>
+                            <div id="tick_5_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_3_4" class="tick">4</div>
+                            <div id="tick_5_3_5" class="tick">5</div>
+                            <div id="tick_5_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_3_7" class="tick">7</div>
+                            <div id="tick_5_3_8" class="tick">8</div>
+                            <div id="tick_5_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_4" class="little_square">
+                    <div id="guess_5_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_4_1" class="tick">1</div>
+                            <div id="tick_5_4_2" class="tick">2</div>
+                            <div id="tick_5_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_4_4" class="tick">4</div>
+                            <div id="tick_5_4_5" class="tick">5</div>
+                            <div id="tick_5_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_4_7" class="tick">7</div>
+                            <div id="tick_5_4_8" class="tick">8</div>
+                            <div id="tick_5_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_5" class="little_square">
+                    <div id="guess_5_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_5_1" class="tick">1</div>
+                            <div id="tick_5_5_2" class="tick">2</div>
+                            <div id="tick_5_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_5_4" class="tick">4</div>
+                            <div id="tick_5_5_5" class="tick">5</div>
+                            <div id="tick_5_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_5_7" class="tick">7</div>
+                            <div id="tick_5_5_8" class="tick">8</div>
+                            <div id="tick_5_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_6" class="little_square">
+                    <div id="guess_5_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_6_1" class="tick">1</div>
+                            <div id="tick_5_6_2" class="tick">2</div>
+                            <div id="tick_5_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_6_4" class="tick">4</div>
+                            <div id="tick_5_6_5" class="tick">5</div>
+                            <div id="tick_5_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_6_7" class="tick">7</div>
+                            <div id="tick_5_6_8" class="tick">8</div>
+                            <div id="tick_5_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_7" class="little_square">
+                    <div id="guess_5_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_7_1" class="tick">1</div>
+                            <div id="tick_5_7_2" class="tick">2</div>
+                            <div id="tick_5_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_7_4" class="tick">4</div>
+                            <div id="tick_5_7_5" class="tick">5</div>
+                            <div id="tick_5_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_7_7" class="tick">7</div>
+                            <div id="tick_5_7_8" class="tick">8</div>
+                            <div id="tick_5_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_8" class="little_square">
+                    <div id="guess_5_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_8_1" class="tick">1</div>
+                            <div id="tick_5_8_2" class="tick">2</div>
+                            <div id="tick_5_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_8_4" class="tick">4</div>
+                            <div id="tick_5_8_5" class="tick">5</div>
+                            <div id="tick_5_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_8_7" class="tick">7</div>
+                            <div id="tick_5_8_8" class="tick">8</div>
+                            <div id="tick_5_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_5_9" class="little_square">
+                    <div id="guess_5_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_5_9_1" class="tick">1</div>
+                            <div id="tick_5_9_2" class="tick">2</div>
+                            <div id="tick_5_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_9_4" class="tick">4</div>
+                            <div id="tick_5_9_5" class="tick">5</div>
+                            <div id="tick_5_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_5_9_7" class="tick">7</div>
+                            <div id="tick_5_9_8" class="tick">8</div>
+                            <div id="tick_5_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="square_6" class="big_square">
+                <div id="square_6_1" class="little_square">
+                    <div id="guess_6_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_1_1" class="tick">1</div>
+                            <div id="tick_6_1_2" class="tick">2</div>
+                            <div id="tick_6_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_1_4" class="tick">4</div>
+                            <div id="tick_6_1_5" class="tick">5</div>
+                            <div id="tick_6_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_1_7" class="tick">7</div>
+                            <div id="tick_6_1_8" class="tick">8</div>
+                            <div id="tick_6_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_2" class="little_square">
+                    <div id="guess_6_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_2_1" class="tick">1</div>
+                            <div id="tick_6_2_2" class="tick">2</div>
+                            <div id="tick_6_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_2_4" class="tick">4</div>
+                            <div id="tick_6_2_5" class="tick">5</div>
+                            <div id="tick_6_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_2_7" class="tick">7</div>
+                            <div id="tick_6_2_8" class="tick">8</div>
+                            <div id="tick_6_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_3" class="little_square">
+                    <div id="guess_6_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_3_1" class="tick">1</div>
+                            <div id="tick_6_3_2" class="tick">2</div>
+                            <div id="tick_6_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_3_4" class="tick">4</div>
+                            <div id="tick_6_3_5" class="tick">5</div>
+                            <div id="tick_6_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_3_7" class="tick">7</div>
+                            <div id="tick_6_3_8" class="tick">8</div>
+                            <div id="tick_6_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_4" class="little_square">
+                    <div id="guess_6_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_4_1" class="tick">1</div>
+                            <div id="tick_6_4_2" class="tick">2</div>
+                            <div id="tick_6_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_4_4" class="tick">4</div>
+                            <div id="tick_6_4_5" class="tick">5</div>
+                            <div id="tick_6_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_4_7" class="tick">7</div>
+                            <div id="tick_6_4_8" class="tick">8</div>
+                            <div id="tick_6_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_5" class="little_square">
+                    <div id="guess_6_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_5_1" class="tick">1</div>
+                            <div id="tick_6_5_2" class="tick">2</div>
+                            <div id="tick_6_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_5_4" class="tick">4</div>
+                            <div id="tick_6_5_5" class="tick">5</div>
+                            <div id="tick_6_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_5_7" class="tick">7</div>
+                            <div id="tick_6_5_8" class="tick">8</div>
+                            <div id="tick_6_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_6" class="little_square">
+                    <div id="guess_6_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_6_1" class="tick">1</div>
+                            <div id="tick_6_6_2" class="tick">2</div>
+                            <div id="tick_6_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_6_4" class="tick">4</div>
+                            <div id="tick_6_6_5" class="tick">5</div>
+                            <div id="tick_6_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_6_7" class="tick">7</div>
+                            <div id="tick_6_6_8" class="tick">8</div>
+                            <div id="tick_6_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_7" class="little_square">
+                    <div id="guess_6_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_7_1" class="tick">1</div>
+                            <div id="tick_6_7_2" class="tick">2</div>
+                            <div id="tick_6_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_7_4" class="tick">4</div>
+                            <div id="tick_6_7_5" class="tick">5</div>
+                            <div id="tick_6_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_7_7" class="tick">7</div>
+                            <div id="tick_6_7_8" class="tick">8</div>
+                            <div id="tick_6_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_8" class="little_square">
+                    <div id="guess_6_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_8_1" class="tick">1</div>
+                            <div id="tick_6_8_2" class="tick">2</div>
+                            <div id="tick_6_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_8_4" class="tick">4</div>
+                            <div id="tick_6_8_5" class="tick">5</div>
+                            <div id="tick_6_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_8_7" class="tick">7</div>
+                            <div id="tick_6_8_8" class="tick">8</div>
+                            <div id="tick_6_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_6_9" class="little_square">
+                    <div id="guess_6_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_6_9_1" class="tick">1</div>
+                            <div id="tick_6_9_2" class="tick">2</div>
+                            <div id="tick_6_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_9_4" class="tick">4</div>
+                            <div id="tick_6_9_5" class="tick">5</div>
+                            <div id="tick_6_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_6_9_7" class="tick">7</div>
+                            <div id="tick_6_9_8" class="tick">8</div>
+                            <div id="tick_6_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="big_row">
+            <div id="square_7" class="big_square">
+                <div id="square_7_1" class="little_square">
+                    <div id="guess_7_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_1_1" class="tick">1</div>
+                            <div id="tick_7_1_2" class="tick">2</div>
+                            <div id="tick_7_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_1_4" class="tick">4</div>
+                            <div id="tick_7_1_5" class="tick">5</div>
+                            <div id="tick_7_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_1_7" class="tick">7</div>
+                            <div id="tick_7_1_8" class="tick">8</div>
+                            <div id="tick_7_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_2" class="little_square">
+                    <div id="guess_7_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_2_1" class="tick">1</div>
+                            <div id="tick_7_2_2" class="tick">2</div>
+                            <div id="tick_7_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_2_4" class="tick">4</div>
+                            <div id="tick_7_2_5" class="tick">5</div>
+                            <div id="tick_7_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_2_7" class="tick">7</div>
+                            <div id="tick_7_2_8" class="tick">8</div>
+                            <div id="tick_7_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_3" class="little_square">
+                    <div id="guess_7_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_3_1" class="tick">1</div>
+                            <div id="tick_7_3_2" class="tick">2</div>
+                            <div id="tick_7_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_3_4" class="tick">4</div>
+                            <div id="tick_7_3_5" class="tick">5</div>
+                            <div id="tick_7_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_3_7" class="tick">7</div>
+                            <div id="tick_7_3_8" class="tick">8</div>
+                            <div id="tick_7_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_4" class="little_square">
+                    <div id="guess_7_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_4_1" class="tick">1</div>
+                            <div id="tick_7_4_2" class="tick">2</div>
+                            <div id="tick_7_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_4_4" class="tick">4</div>
+                            <div id="tick_7_4_5" class="tick">5</div>
+                            <div id="tick_7_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_4_7" class="tick">7</div>
+                            <div id="tick_7_4_8" class="tick">8</div>
+                            <div id="tick_7_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_5" class="little_square">
+                    <div id="guess_7_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_5_1" class="tick">1</div>
+                            <div id="tick_7_5_2" class="tick">2</div>
+                            <div id="tick_7_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_5_4" class="tick">4</div>
+                            <div id="tick_7_5_5" class="tick">5</div>
+                            <div id="tick_7_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_5_7" class="tick">7</div>
+                            <div id="tick_7_5_8" class="tick">8</div>
+                            <div id="tick_7_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_6" class="little_square">
+                    <div id="guess_7_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_6_1" class="tick">1</div>
+                            <div id="tick_7_6_2" class="tick">2</div>
+                            <div id="tick_7_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_6_4" class="tick">4</div>
+                            <div id="tick_7_6_5" class="tick">5</div>
+                            <div id="tick_7_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_6_7" class="tick">7</div>
+                            <div id="tick_7_6_8" class="tick">8</div>
+                            <div id="tick_7_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_7" class="little_square">
+                    <div id="guess_7_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_7_1" class="tick">1</div>
+                            <div id="tick_7_7_2" class="tick">2</div>
+                            <div id="tick_7_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_7_4" class="tick">4</div>
+                            <div id="tick_7_7_5" class="tick">5</div>
+                            <div id="tick_7_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_7_7" class="tick">7</div>
+                            <div id="tick_7_7_8" class="tick">8</div>
+                            <div id="tick_7_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_8" class="little_square">
+                    <div id="guess_7_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_8_1" class="tick">1</div>
+                            <div id="tick_7_8_2" class="tick">2</div>
+                            <div id="tick_7_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_8_4" class="tick">4</div>
+                            <div id="tick_7_8_5" class="tick">5</div>
+                            <div id="tick_7_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_8_7" class="tick">7</div>
+                            <div id="tick_7_8_8" class="tick">8</div>
+                            <div id="tick_7_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_7_9" class="little_square">
+                    <div id="guess_7_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_7_9_1" class="tick">1</div>
+                            <div id="tick_7_9_2" class="tick">2</div>
+                            <div id="tick_7_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_9_4" class="tick">4</div>
+                            <div id="tick_7_9_5" class="tick">5</div>
+                            <div id="tick_7_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_7_9_7" class="tick">7</div>
+                            <div id="tick_7_9_8" class="tick">8</div>
+                            <div id="tick_7_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="square_8" class="big_square">
+                <div id="square_8_1" class="little_square">
+                    <div id="guess_8_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_1_1" class="tick">1</div>
+                            <div id="tick_8_1_2" class="tick">2</div>
+                            <div id="tick_8_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_1_4" class="tick">4</div>
+                            <div id="tick_8_1_5" class="tick">5</div>
+                            <div id="tick_8_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_1_7" class="tick">7</div>
+                            <div id="tick_8_1_8" class="tick">8</div>
+                            <div id="tick_8_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_2" class="little_square">
+                    <div id="guess_8_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_2_1" class="tick">1</div>
+                            <div id="tick_8_2_2" class="tick">2</div>
+                            <div id="tick_8_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_2_4" class="tick">4</div>
+                            <div id="tick_8_2_5" class="tick">5</div>
+                            <div id="tick_8_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_2_7" class="tick">7</div>
+                            <div id="tick_8_2_8" class="tick">8</div>
+                            <div id="tick_8_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_3" class="little_square">
+                    <div id="guess_8_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_3_1" class="tick">1</div>
+                            <div id="tick_8_3_2" class="tick">2</div>
+                            <div id="tick_8_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_3_4" class="tick">4</div>
+                            <div id="tick_8_3_5" class="tick">5</div>
+                            <div id="tick_8_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_3_7" class="tick">7</div>
+                            <div id="tick_8_3_8" class="tick">8</div>
+                            <div id="tick_8_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_4" class="little_square">
+                    <div id="guess_8_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_4_1" class="tick">1</div>
+                            <div id="tick_8_4_2" class="tick">2</div>
+                            <div id="tick_8_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_4_4" class="tick">4</div>
+                            <div id="tick_8_4_5" class="tick">5</div>
+                            <div id="tick_8_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_4_7" class="tick">7</div>
+                            <div id="tick_8_4_8" class="tick">8</div>
+                            <div id="tick_8_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_5" class="little_square">
+                    <div id="guess_8_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_5_1" class="tick">1</div>
+                            <div id="tick_8_5_2" class="tick">2</div>
+                            <div id="tick_8_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_5_4" class="tick">4</div>
+                            <div id="tick_8_5_5" class="tick">5</div>
+                            <div id="tick_8_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_5_7" class="tick">7</div>
+                            <div id="tick_8_5_8" class="tick">8</div>
+                            <div id="tick_8_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_6" class="little_square">
+                    <div id="guess_8_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_6_1" class="tick">1</div>
+                            <div id="tick_8_6_2" class="tick">2</div>
+                            <div id="tick_8_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_6_4" class="tick">4</div>
+                            <div id="tick_8_6_5" class="tick">5</div>
+                            <div id="tick_8_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_6_7" class="tick">7</div>
+                            <div id="tick_8_6_8" class="tick">8</div>
+                            <div id="tick_8_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_7" class="little_square">
+                    <div id="guess_8_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_7_1" class="tick">1</div>
+                            <div id="tick_8_7_2" class="tick">2</div>
+                            <div id="tick_8_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_7_4" class="tick">4</div>
+                            <div id="tick_8_7_5" class="tick">5</div>
+                            <div id="tick_8_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_7_7" class="tick">7</div>
+                            <div id="tick_8_7_8" class="tick">8</div>
+                            <div id="tick_8_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_8" class="little_square">
+                    <div id="guess_8_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_8_1" class="tick">1</div>
+                            <div id="tick_8_8_2" class="tick">2</div>
+                            <div id="tick_8_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_8_4" class="tick">4</div>
+                            <div id="tick_8_8_5" class="tick">5</div>
+                            <div id="tick_8_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_8_7" class="tick">7</div>
+                            <div id="tick_8_8_8" class="tick">8</div>
+                            <div id="tick_8_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_8_9" class="little_square">
+                    <div id="guess_8_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_8_9_1" class="tick">1</div>
+                            <div id="tick_8_9_2" class="tick">2</div>
+                            <div id="tick_8_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_9_4" class="tick">4</div>
+                            <div id="tick_8_9_5" class="tick">5</div>
+                            <div id="tick_8_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_8_9_7" class="tick">7</div>
+                            <div id="tick_8_9_8" class="tick">8</div>
+                            <div id="tick_8_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="square_9" class="big_square">
+                <div id="square_9_1" class="little_square">
+                    <div id="guess_9_1" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_1_1" class="tick">1</div>
+                            <div id="tick_9_1_2" class="tick">2</div>
+                            <div id="tick_9_1_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_1_4" class="tick">4</div>
+                            <div id="tick_9_1_5" class="tick">5</div>
+                            <div id="tick_9_1_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_1_7" class="tick">7</div>
+                            <div id="tick_9_1_8" class="tick">8</div>
+                            <div id="tick_9_1_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_2" class="little_square">
+                    <div id="guess_9_2" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_2_1" class="tick">1</div>
+                            <div id="tick_9_2_2" class="tick">2</div>
+                            <div id="tick_9_2_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_2_4" class="tick">4</div>
+                            <div id="tick_9_2_5" class="tick">5</div>
+                            <div id="tick_9_2_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_2_7" class="tick">7</div>
+                            <div id="tick_9_2_8" class="tick">8</div>
+                            <div id="tick_9_2_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_3" class="little_square">
+                    <div id="guess_9_3" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_3_1" class="tick">1</div>
+                            <div id="tick_9_3_2" class="tick">2</div>
+                            <div id="tick_9_3_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_3_4" class="tick">4</div>
+                            <div id="tick_9_3_5" class="tick">5</div>
+                            <div id="tick_9_3_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_3_7" class="tick">7</div>
+                            <div id="tick_9_3_8" class="tick">8</div>
+                            <div id="tick_9_3_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_4" class="little_square">
+                    <div id="guess_9_4" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_4_1" class="tick">1</div>
+                            <div id="tick_9_4_2" class="tick">2</div>
+                            <div id="tick_9_4_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_4_4" class="tick">4</div>
+                            <div id="tick_9_4_5" class="tick">5</div>
+                            <div id="tick_9_4_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_4_7" class="tick">7</div>
+                            <div id="tick_9_4_8" class="tick">8</div>
+                            <div id="tick_9_4_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_5" class="little_square">
+                    <div id="guess_9_5" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_5_1" class="tick">1</div>
+                            <div id="tick_9_5_2" class="tick">2</div>
+                            <div id="tick_9_5_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_5_4" class="tick">4</div>
+                            <div id="tick_9_5_5" class="tick">5</div>
+                            <div id="tick_9_5_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_5_7" class="tick">7</div>
+                            <div id="tick_9_5_8" class="tick">8</div>
+                            <div id="tick_9_5_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_6" class="little_square">
+                    <div id="guess_9_6" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_6_1" class="tick">1</div>
+                            <div id="tick_9_6_2" class="tick">2</div>
+                            <div id="tick_9_6_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_6_4" class="tick">4</div>
+                            <div id="tick_9_6_5" class="tick">5</div>
+                            <div id="tick_9_6_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_6_7" class="tick">7</div>
+                            <div id="tick_9_6_8" class="tick">8</div>
+                            <div id="tick_9_6_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_7" class="little_square">
+                    <div id="guess_9_7" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_7_1" class="tick">1</div>
+                            <div id="tick_9_7_2" class="tick">2</div>
+                            <div id="tick_9_7_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_7_4" class="tick">4</div>
+                            <div id="tick_9_7_5" class="tick">5</div>
+                            <div id="tick_9_7_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_7_7" class="tick">7</div>
+                            <div id="tick_9_7_8" class="tick">8</div>
+                            <div id="tick_9_7_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_8" class="little_square">
+                    <div id="guess_9_8" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_8_1" class="tick">1</div>
+                            <div id="tick_9_8_2" class="tick">2</div>
+                            <div id="tick_9_8_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_8_4" class="tick">4</div>
+                            <div id="tick_9_8_5" class="tick">5</div>
+                            <div id="tick_9_8_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_8_7" class="tick">7</div>
+                            <div id="tick_9_8_8" class="tick">8</div>
+                            <div id="tick_9_8_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="square_9_9" class="little_square">
+                    <div id="guess_9_9" class="guess"></div>
+                    <div class="ticks_container">
+                        <div class="tick_row">
+                            <div id="tick_9_9_1" class="tick">1</div>
+                            <div id="tick_9_9_2" class="tick">2</div>
+                            <div id="tick_9_9_3" class="tick">3</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_9_4" class="tick">4</div>
+                            <div id="tick_9_9_5" class="tick">5</div>
+                            <div id="tick_9_9_6" class="tick">6</div>
+                        </div>
+                        <div class="tick_row">
+                            <div id="tick_9_9_7" class="tick">7</div>
+                            <div id="tick_9_9_8" class="tick">8</div>
+                            <div id="tick_9_9_9" class="tick">9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<footer>
+
+</footer>
+
+<script>
+    $(function() {
+        init();
+    });
+</script>
+
+</body>
+</html>

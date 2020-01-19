@@ -1,0 +1,92 @@
+body {
+    background-color: #5D737E;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+#board {
+    border: white solid 4px;
+    margin: 0;
+    padding: 0;
+    width: 542px;
+    height: 542px;
+
+}
+
+.big_row {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 546px;
+    height: 182px;
+}
+
+.big_square {
+    display: inline;
+    float: left;
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: 180px;
+    height: 180px;
+    border: solid white 1px;
+}
+
+.little_row {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    height: 60px;
+}
+
+.little_square {
+    position: relative;
+    display: inline;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 58px;
+    height: 58px;
+    border: #ffffff66 dashed 1px;
+}
+
+.tick_row {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 54px;
+    height: 20px;
+}
+
+.tick {
+    display: inline;
+    float: left;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #fff6;
+    border: none;
+}
+
+.guess {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 50px;
+    width: 58px;
+    height: 58px;
+}
+
+.selected_square {
+    border: red solid 1px;
+}
