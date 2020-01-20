@@ -19,4 +19,19 @@ class LittleSquare {
         }
 
     }
+
+    getTickByNumber ( n ) {
+        return this.ticks[n - 1];
+    }
+
+    anyTicked() {
+        for (var i = 0; i < this.ticks.length; i++) {
+            let tick = this.ticks[ i ];
+            if ( tick.ticked ) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
