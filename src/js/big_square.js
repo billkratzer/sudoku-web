@@ -17,9 +17,12 @@ class BigSquare {
         var values = this.buildOneThruNine();
         for (var i = 0; i < 9; i++) {
             var square = this.squares[i];
-            values.remove(square.guess);
+            var idx = values.indexOf( square.guess );
+            if ( idx >= 0) {
+                values.splice( idx, 1);
+            }
         }
-        return values.length() == 0;
+        return values.length == 0;
     }
 
     getRowByIndex( rowIndex ) {
