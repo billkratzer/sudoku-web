@@ -16,9 +16,9 @@ class Board {
     }
 
     solved() {
-        for (var i = 0; i < 9; i++) {
-            var square = this.squares[0];
-            if (!square.solved()) {
+        for ( let i = 0; i < 9; i++ ) {
+            let square = this.squares[ i ];
+            if ( !square.solved() ) {
                 return false;
             }
         }
@@ -29,19 +29,19 @@ class Board {
         let values = new Array();
         let rowIndex = Math.floor( ( minor - 1 ) / 3);
         if ( ( major >= 1 ) && ( major <=3 ) ) {
-            values.push( this.squares[0].getRowByIndex( rowIndex ) );
-            values.push( this.squares[1].getRowByIndex( rowIndex ) );
-            values.push( this.squares[2].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 0 ].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 1 ].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 2 ].getRowByIndex( rowIndex ) );
         }
         else if ( ( major >= 4 ) && ( major <=6 ) ) {
-            values.push( this.squares[3].getRowByIndex( rowIndex ) );
-            values.push( this.squares[4].getRowByIndex( rowIndex ) );
-            values.push( this.squares[5].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 3 ].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 4 ].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 5 ].getRowByIndex( rowIndex ) );
         }
         else if ( ( major >= 7 ) && ( major <= 9 ) ) {
-            values.push( this.squares[6].getRowByIndex( rowIndex ) );
-            values.push( this.squares[7].getRowByIndex( rowIndex ) );
-            values.push( this.squares[8].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 6 ].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 7 ].getRowByIndex( rowIndex ) );
+            values.push( this.squares[ 8 ].getRowByIndex( rowIndex ) );
         }
         else {
             return [];
