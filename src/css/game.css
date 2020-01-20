@@ -7,13 +7,18 @@ div {
     margin: 0;
 }
 
+#game_area {
+    text-align: center;
+    width: 100%;
+}
+
 #board {
     border: white solid 4px;
     margin: 0;
     padding: 0;
     width: 542px;
     height: 542px;
-
+    display: inline-block;
 }
 
 .big_row {
