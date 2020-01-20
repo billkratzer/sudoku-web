@@ -159,6 +159,81 @@ function playNumber( n ) {
     }
 }
 
+function buildTickSelector( major, minor, n ) {
+    return "#tick_" + major + "_" + minor + "_" + n;
+}
+
+function toggleTick( n ) {
+    let major = getSelectedMajor();
+    if ( !major ) {
+        return;
+    }
+
+    let minor = getSelectedMinor();
+    if ( !minor ) {
+        return;
+    }
+
+    let ls = board.getLittleSquareAtMajorMinor( major, minor );
+    if (!ls) {
+        console.log("Warning: Little Square not found at: " + major + ", " + minor);
+        return;
+    }
+
+    let tick = ls.getTickByNumber( n );
+    if (!tick) {
+        console.log("Warning: Tick  not found at: " + major + ", " + minor + ", " + n);
+        return;
+    }
+
+    tick.toggle();
+    let selector = buildTickSelector( major, minor, n );
+    if ( tick.ticked ) {
+        $( selector ).addClass( "ticked" );
+    }
+    else {
+        $( selector ).removeClass( "ticked" );
+    }
+}
+
+function toggleAllTicks() {
+    let major = getSelectedMajor();
+    if ( !major ) {
+        return;
+    }
+
+    let minor = getSelectedMinor();
+    if ( !minor ) {
+        return;
+    }
+
+    let ls = board.getLittleSquareAtMajorMinor( major, minor );
+    if (!ls) {
+        console.log("Warning: Little Square not found at: " + major + ", " + minor);
+        return;
+    }
+
+    if ( ls.anyTicked() ) {
+        // untick them all!
+        for ( var n = 1; n <= 9; n++ ) {
+            let tick = ls.getTickByNumber( n );
+            tick.ticked = false;
+            let selector = buildTickSelector( major, minor, n );
+            $( selector ).removeClass( "ticked" );
+        }
+    }
+    else {
+        // tick them all!
+        for ( var n = 1; n <= 9; n++ ) {
+            let tick = ls.getTickByNumber( n );
+            tick.ticked = true;
+            let selector = buildTickSelector( major, minor, n );
+            $( selector ).addClass( "ticked" );
+        }
+
+    }
+}
+
 function eraseSquare() {
     let major = getSelectedMajor();
     if ( !major ) {
@@ -204,6 +279,7 @@ function drawBoard() {
 
 function init() {
     var puzzle = "5...8..49...5...3..673....115..........2.8..........187....415..3...2...49..5...3";
+    puzzle = "5.3.87249849521637267349581158463972974218365326795418782934156635172894491856723";
     board = new Board(puzzle);
 
     drawBoard();
@@ -216,7 +292,7 @@ function init() {
     });
 
     $( "#board ").keydown( function(event) {
-       console.log(event.which + ":" + event.key + ":" + event.keyCode);
+       // console.log(event.which + ":" + event.key + ":" + event.keyCode);
        if ( event.keyCode == 37) {
            moveLeft();
        }
@@ -230,10 +306,20 @@ function init() {
             moveDown();
         }
         if ( ( event.keyCode >= 49 ) && ( event.keyCode <= 57 ) ) {
-            playNumber( event.keyCode - 48);
+            if ( event.shiftKey ) {
+                toggleTick( event.keyCode - 48 );
+            }
+            else {
+                playNumber( event.keyCode - 48);
+            }
         }
         if ( event.keyCode == 32 ) {
-            eraseSquare();
+            if ( event.shiftKey ) {
+                toggleAllTicks();
+            }
+            else {
+                eraseSquare();
+            }
         }
     });
 }
