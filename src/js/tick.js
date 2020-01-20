@@ -4,4 +4,8 @@ class Tick {
         this.ticked = false;
     }
 
+    toggle() {
+        this.ticked = !this.ticked;
+    }
+
 }
