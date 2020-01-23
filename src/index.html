@@ -1,6 +1,8 @@
 <html>
 <head>
     <title>Sudoku Web</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/game.css"/>
     <link rel="stylesheet" href="/css/index.css"/>
     <script src="/js/vendor/jquery-3.4.1.min.js"></script>
@@ -15,7 +17,11 @@
 <body>
 <header>
     <div id="header_left">Web Sudoku</div>
-    <div id="header_right">By Bill Kratzer</div>
+    <div id="header_right">
+        <a href="javascript:newGame();">New Game</a>
+        |
+        <a href="javascript:showHelp();">Help</a>
+    </div>
 </header>
 
 <div id="game_area">
@@ -1675,34 +1681,124 @@
 
 </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="about_modal" class="modal">
 
-    <!-- Modal content -->
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Game Solved!</p>
+        <div class="modal-title">
+            About Web Sudoku
+            <span class="close-x close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>
+                I built Web Sudoku to practice my web and javascript programmings skills while also scratching my itch for a version of Sudkou
+                that I could quickly play in my web browser.
+            </p>
+            <p>
+                If you enjoy this game, please <a href="mailto:bill@thekratzers.com">let me know</a>!
+            </p>
+            <p>
+                This project made possible by:
+                <a href="https://jquery.com" target="_blank">jQuery</a>,
+                <a href="https://fonts.google.com" target="_blank">Google Fonts</a>,
+                and the excellent Javascript <a href="https://github.com/robatron/sudoku.js" target="_blank">Sudoku generator</a> library.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-button close">Close</div>
+        </div>
+    </div>
+
+</div>
+
+<div id="help_modal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-title">
+            Help
+            <span class="close-x close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h1>How to Play</h1>
+            <p>
+                Sudoku is played on a grid of 9 x 9 spaces.
+                Within the rows and columns are 9 "squares" (made up of 3 x 3 spaces).
+                Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any numbers within the row, column or square.
+            </p>
+            <h1>Keyboard and Mouse Input</h1>
+            <table id="input-help">
+                <thead>
+                    <td>Mouse, Key</td>
+                    <td>Action</td>
+                </thead>
+                <tr>
+                    <td>Mouse click</td>
+                    <td>Select a square</td>
+                </tr>
+                <tr>
+                    <td>Cursor Keys</td>
+                    <td>Move the selected clear</td>
+                </tr>
+                <tr>
+                    <td>1-9</td>
+                    <td>Play that value in the selected square</td>
+                </tr>
+                <tr>
+                    <td>SHIFT + 1-9</td>
+                    <td>Toggle a guess tick in the selected square</td>
+                </tr>
+                <tr>
+                    <td>Space</td>
+                    <td>Clear the value in the selected square</td>
+                </tr>
+                <tr>
+                    <td>SHIFT + Space</td>
+                    <td>Clear (or Set) all guess ticks in the selected square</td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-button close">Close</div>
+        </div>
     </div>
 
 </div>
 
 <footer>
-    <div
     <div id="footer_left">
-        <a href="https://github.com/billkratzer/sudoku-web" target="_blank">Git Hub</a>
+        <a href="https://github.com/billkratzer/sudoku-web" target="_blank">GitHub</a>
     </div>
     <div id="footer_center">
-        Copyright (C) 2020
+        Copyright &copy; 2020 <a href="http://thekratzers.com" target="_blank">Bill Kratzer</a>
     </div>
     <div id="footer_right">
-        <a href="">About</a>
+        <a href="javascript:showAbout();">About</a>
     </div>
 </footer>
 
 <script>
+    var modal = null;
+
     $(function() {
+        $( ".close" ).click(function()  {
+            if ( modal ) {
+                modal.hide();
+            }
+        });
+
         init();
     });
+
+    function showAbout() {
+        modal = $( "#about_modal" );
+        modal.show();
+    }
+
+    function showHelp() {
+        modal = $( "#help_modal" );
+        modal.show();
+    }
+
+
 </script>
 
 </body>

@@ -24,10 +24,16 @@ header {
     padding-bottom: 10px;
     display: flex;
     flex-direction: row;
+    align-items: baseline;
     background-color: #2F3D56;
     color: #ccc;
-    font-size: 24px;
     border-bottom: solid 4px #eee;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+header a {
+    color: #ccc;
 }
 
 footer {
@@ -39,8 +45,8 @@ footer {
     flex-direction: row;
     background-color: #2F3D56;
     color: #ccc;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
-    font-family: sans-serif;
     border-top: solid 4px #eee;
 }
 
@@ -56,12 +62,15 @@ footer a:visited {
     width: 100%;
     text-align: left;
     padding-left: 20px;
+    font-size: 24px;
+    font-family: 'Oleo Script', cursive;
 }
 
 #header_right {
     width: 100%;
     text-align: right;
     padding-right: 20px;
+    font-size: 16px;
 }
 
 #footer_left {
@@ -90,32 +99,102 @@ footer a:visited {
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
+    padding-top: 60px;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #A9BBC6;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
+    padding: 0px;
+    border: 4px solid #fff;
     text-align: center;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal-title {
+    align-items: center;
+    text-align: left;
+    text-indent: 1em;
+    padding: 4px 0px;
+
+    font-size: 20px;
+    background-color: #2F3D56;
+    color: #eee;
+    width: 100%;
+}
+
+.modal-body {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    color: #222;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.modal-body a {
+    color: #222;
+}
+
+.modal-body a:visited {
+    color: #222;
+}
+
+.modal-button {
+    padding: 5px 20px;
+    margin: 20px;
+    background-color: #2F3D56;
+    color: #9FB1BC;
 }
 
 /* The Close Button */
-.close {
-    color: #aaaaaa;
+.close-x {
+    color: #ddd;
     float: right;
-    font-size: 12px;
-    font-family: sans-serif;
+    padding-right: 20px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
+.close-x:hover, .close-x:focus {
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
+}
+
+.modal-button:hover, .modal-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#input-help {
+    width: 80%;
+    border: solid 1px #2F3D56;
+    border-spacing: 0;
+}
+
+#help_modal .modal-body {
+    text-align: left;
+    font-size: 14px;
+}
+
+#input-help td {
+    margin: 0px;
+    font-size: 14px;
+    padding: 3px;
+    border: solid 1px #2F3D56;
+}
+
+#input-help thead {
+    background-color: #2F3D56;
+    color: #eee;
 }
