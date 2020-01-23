@@ -1681,6 +1681,18 @@
 
 </div>
 
+<div id="new_game_panel">
+    <h1>Ready to Play?</h1>
+    <h2>Select Your Difficulty:</h2>
+    <div id="diff_buttons">
+        <div id="diff_easy" class="diff_button">Easy</div>
+        <div id="diff_medium" class="diff_button">Medium</div>
+        <div id="diff_hard" class="diff_button">Hard</div>
+        <div id="diff_very_hard" class="diff_button">Very Hard</div>
+        <div id="diff_insane" class="diff_button">Ridiculous</div>
+    </div>
+</div>
+
 <div id="about_modal" class="modal">
 
     <div class="modal-content">
@@ -1760,8 +1772,29 @@
             <div class="modal-button close">Close</div>
         </div>
     </div>
+</div>
+
+<div id="confirm_modal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-title">
+            Quit Your Current Game?
+            <span class="close-x close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>
+                Are you sure that you want to quit your current game to start a new game?
+            </p>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-button close">No, Keep Playing</div>
+            <div id="confirm_new_game_button" class="modal-button">Yes, Start a New Game</div>
+        </div>
+    </div>
 
 </div>
+
+
 
 <footer>
     <div id="footer_left">
@@ -1785,8 +1818,46 @@
             }
         });
 
-        init();
+        $( "#confirm_new_game_button" ).click(function() {
+            modal.hide();
+            $( "#game_area" ).hide();
+            $( "#new_game_panel").show();
+        });
+
+        $( "#diff_easy" ).click(function() {
+            startGame( "easy" );
+        });
+        $( "#diff_medium" ).click(function() {
+            startGame( "medium" );
+        });
+        $( "#diff_hard" ).click(function() {
+            startGame( "hard" );
+        });
+        $( "#diff_very_hard" ).click(function() {
+            startGame( "very-hard" );
+        });
+        $( "#diff_insane" ).click(function() {
+            startGame( "insane" );
+        });
+
     });
+
+    function newGame() {
+        if ( board ) {
+            showConfirm();
+        }
+        else {
+            $( "#game_area" ).hide();
+            $( "#new_game_panel").show();
+        }
+    }
+
+    function startGame( difficulty ) {
+        init( difficulty );
+
+        $( "#new_game_panel").hide();
+        $( "#game_area" ).show();
+    }
 
     function showAbout() {
         modal = $( "#about_modal" );
@@ -1798,6 +1869,10 @@
         modal.show();
     }
 
+    function showConfirm() {
+        modal = $("#confirm_modal");
+        modal.show();
+    }
 
 </script>
 

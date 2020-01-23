@@ -10,11 +10,51 @@ div {
 }
 
 #game_area {
+    display: none;
     text-align: center;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #9FB1BC;
+}
+
+#new_game_panel {
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #9FB1BC;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#new_game_panel h1 {
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+
+#new_game_panel h2 {
+    text-align: center;
+}
+
+#diff_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.diff_button {
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 10px;
+    background-color: #2F3D56;
+    color: #9FB1BC;
+
+}
+
+.diff_button:hover {
+    color: #fff;
+    cursor: pointer;
 }
 
 header {
@@ -197,4 +237,9 @@ footer a:visited {
 #input-help thead {
     background-color: #2F3D56;
     color: #eee;
+}
+
+#confirm_modal .modal-footer {
+    justify-content: center;
+    flex-direction: row;
 }

@@ -277,12 +277,12 @@ function drawBoard() {
     }
 }
 
-function init() {
+function init( difficulty ) {
     //let  puzzle = "5...8..49...5...3..673....115..........2.8..........187....415..3...2...49..5...3";
     //let puzzle = "5.3.87249849521637267349581158463972974218365326795418782934156635172894491856723";
     //let puzzle = "2...7......95.186...6..4..2.4..89.23.6.....4...5.3.91.3...186.4.57..3...1.42.5.7.";
 
-    let puzzle = getPuzzle();
+    let puzzle = getPuzzle( difficulty );
     board = new Board(puzzle);
 
     drawBoard();

@@ -1,4 +1,4 @@
-function getPuzzle() {
+function getPuzzle( difficulty ) {
     let puzzles = [
         '.647..5.3.2..6....3......124.5..8....9..1......832..798....19.5..2.5416.7..9...8.',
         '9534.17.........8.12....3...7..62..58..59.6.2...3...1.59.7.3.6..8..245.16.4..9...',
@@ -43,7 +43,7 @@ function getPuzzle() {
     ]
 
     // return puzzles[ Math.floor( Math.random() * puzzles.length )  ];
-    return sudoku.generate("easy");
+    return sudoku.generate( difficulty );
 }
 
 
