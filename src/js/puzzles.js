@@ -42,6 +42,9 @@ function getPuzzle() {
         '2...14.38.4.26..5..76.....9.129.7.....8..1..7...5.3.2.3....8.7.48....9.39...5..14'
     ]
 
-    return puzzles[ Math.floor( Math.random() * puzzles.length )  ];
+    // return puzzles[ Math.floor( Math.random() * puzzles.length )  ];
+    return sudoku.generate("easy");
 }
+
+
 
