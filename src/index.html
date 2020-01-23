@@ -2,7 +2,9 @@
 <head>
     <title>Sudoku Web</title>
     <link rel="stylesheet" href="/css/game.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
     <script src="/js/vendor/jquery-3.4.1.min.js"></script>
+    <script src="/js/vendor/sudoku.js"></script>
     <script src="/js/tick.js"></script>
     <script src="/js/little_square.js"></script>
     <script src="/js/big_square.js"></script>
@@ -12,8 +14,10 @@
 </head>
 <body>
 <header>
-
+    <div id="header_left">Web Sudoku</div>
+    <div id="header_right">By Bill Kratzer</div>
 </header>
+
 <div id="game_area">
     <div id="board" tabindex="0">
         <div class="big_row">
@@ -1671,8 +1675,28 @@
 
 </div>
 
-<footer>
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Game Solved!</p>
+    </div>
+
+</div>
+
+<footer>
+    <div
+    <div id="footer_left">
+        <a href="">Git Hub</a>
+    </div>
+    <div id="footer_center">
+        Copyright (C) 2020
+    </div>
+    <div id="footer_right">
+        <a href="">About</a>
+    </div>
 </footer>
 
 <script>
