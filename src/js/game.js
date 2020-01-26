@@ -6,6 +6,10 @@ var guessMode = true;
 
 var defaultGuessMode = true;
 
+function blinkScreen() {
+    $("#blink_screen").fadeIn(30).fadeOut(30);
+}
+
 function setSelectedId(id) {
     selectedId = id;
     $( ".little_square" ).removeClass( "selected_square" );
@@ -155,6 +159,7 @@ function playNumber( n ) {
 
     }
     else {
+        blinkScreen();
         // console.log("Can NOT Play " + n.toString() + "!");
     }
 
@@ -260,6 +265,9 @@ function eraseSquare() {
         // Show the tick marks
         let tickSelector = "#square_" + major + "_" + minor + " .tick";
         $( tickSelector ).show();
+    }
+    else {
+        blinkScreen();
     }
 }
 
