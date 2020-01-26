@@ -110,8 +110,16 @@ class Board {
         this.squares[ zMajor ].setClue( n, minor );
     }
 
+    canEraseSquare(major, minor) {
+        let zMajor = major - 1;
+        let zMinor = minor - 1;
+        return !this.squares[ zMajor ].squares[ zMinor ].clue;
+    }
+
     eraseSquare(major, minor) {
         let zMajor = major - 1;
-        this.squares[ zMajor ].eraseSquare( minor );
+        if ( this.canEraseSquare( major, minor ) ) {
+            this.squares[ zMajor ].eraseSquare( minor );
+        }
     }
 }

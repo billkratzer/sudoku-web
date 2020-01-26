@@ -245,16 +245,18 @@ function eraseSquare() {
         return;
     }
 
-    board.eraseSquare(major, minor);
-    let id = '#guess_' + major.toString() + "_" + minor.toString();
+    if ( board.canEraseSquare( major, minor ) ) {
+        board.eraseSquare(major, minor);
+        let id = '#guess_' + major.toString() + "_" + minor.toString();
 
-    // Empty the square
-    $( id ).html( "" );
-    $( id ).removeClass( "guess" );
+        // Empty the square
+        $( id ).html( "" );
+        $( id ).removeClass( "guess" );
 
-    // Show the tick marks
-    let tickSelector = "#square_" + major + "_" + minor + " .tick";
-    $( tickSelector ).show();
+        // Show the tick marks
+        let tickSelector = "#square_" + major + "_" + minor + " .tick";
+        $( tickSelector ).show();
+    }
 }
 
 function drawBoard() {
