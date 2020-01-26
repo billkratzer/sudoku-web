@@ -151,7 +151,7 @@ function playNumber( n ) {
 
     }
     else {
-        console.log("Can NOT Play " + n.toString() + "!");
+        // console.log("Can NOT Play " + n.toString() + "!");
     }
 
     if ( board.solved() ) {
@@ -282,7 +282,7 @@ function drawBoard() {
 }
 
 function handleInput( event ) {
-    // console.log(event.which + ":" + event.key + ":" + event.keyCode);
+    console.log(event.which + ":" + event.key + ":" + event.keyCode);
     if ( event.keyCode == 37) {
         moveLeft();
     }
@@ -310,6 +310,16 @@ function handleInput( event ) {
         else {
             eraseSquare();
         }
+    }
+
+    // Backspace
+    if ( event.keyCode == 8 ) {
+        eraseSquare();
+    }
+
+    // Delete
+    if ( event.keyCode == 46 ) {
+        eraseSquare();
     }
 }
 
