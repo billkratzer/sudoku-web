@@ -138,6 +138,19 @@ footer a:visited {
     color: #2F3D56;
 }
 
+#input_mode_panel_header {
+    font-size: 16px;
+    padding: 4px;
+    border-top: solid white 4px;
+    background-color: #2F3D56;
+    color: #88A2AF;
+}
+
+#input_mode_panel_value {
+    font-size: 18px;
+    padding: 4px;
+    color: #2F3D56;
+}
 
 /* New Game Panel */
 

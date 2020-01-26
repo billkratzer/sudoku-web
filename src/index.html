@@ -1690,6 +1690,12 @@
             </div>
             <div id="timer_panel_value"></div>
         </div>
+        <div id="input_model_panel">
+            <div id="input_mode_panel_header">
+                Input Mode
+            </div>
+            <div id="input_mode_panel_value"></div>
+        </div>
     </div>
 
 </div>
@@ -1779,6 +1785,10 @@
                     <td>SHIFT + Space</td>
                     <td>Clear (or Set) all guess ticks in the selected square</td>
                 </tr>
+                <tr>
+                    <td>T</td>
+                    <td>Toggle between "Guessing Mode" (playing a value) and "Candidate Mode" (placing a tick mark)</td>
+                </tr>
             </table>
         </div>
         <div class="modal-footer">
@@ -1851,7 +1861,8 @@
 
         $("#game_area").hide();
 
-        $( "body").keydown( handleInput );
+        $( "body").keydown( handleKeyDown );
+        $( "body").keyup( handleKeyUp );
 
 
         $( ".little_square" ).click( function(event) {
@@ -1913,6 +1924,7 @@
         }
     }
 
+
     function zeroPad(num, size) {
         var s = num + "";
         while ( s.length < size ) {
@@ -1956,6 +1968,15 @@
         $( "#timer_panel_value").html( getElapsedTimeFormatted() );
     }
 
+    function updateGuessMode() {
+        if ( guessMode ) {
+            $( "#input_mode_panel_value" ).html( "Place / Guess" );
+        }
+        else {
+            $( "#input_mode_panel_value" ).html( "Candidate / Tick" );
+        }
+    }
+
     function startGame( difficulty ) {
         init( difficulty );
 
@@ -1964,12 +1985,15 @@
         $( "#difficulty_panel_value" ).html( capitalize( difficulty ) );
         $( "#timer_panel_value" ).html( "00:00:00" );
 
+        defaultGuessMode = true;
         startTime = new Date();
 
         if ( timer ) {
             clearInterval( timer );
         }
         timer = setInterval(updateTimeElapsed, 1000);
+
+        updateGuessMode();
     }
 
     function showAbout() {

@@ -2,6 +2,10 @@ var board;
 
 var selectedId;
 
+var guessMode = true;
+
+var defaultGuessMode = true;
+
 function setSelectedId(id) {
     selectedId = id;
     $( ".little_square" ).removeClass( "selected_square" );
@@ -281,8 +285,31 @@ function drawBoard() {
     }
 }
 
-function handleInput( event ) {
-    // console.log(event.which + ":" + event.key + ":" + event.keyCode);
+function handleKeyUp( event ) {
+
+    // Shift Key
+    if ( event.keyCode == 16 ) {
+        guessMode = defaultGuessMode;
+        updateGuessMode();
+    }
+
+}
+
+function toggleInputMode() {
+    defaultGuessMode = !defaultGuessMode;
+    guessMode = defaultGuessMode;
+    updateGuessMode();
+}
+
+function handleKeyDown( event ) {
+    console.log(event.which + ":" + event.key + ":" + event.keyCode);
+
+    // Shift Key
+    if ( event.keyCode == 16 ) {
+        guessMode = !defaultGuessMode;
+        updateGuessMode();
+        return;
+    }
 
     // Arrow Keys
     if ( event.keyCode == 37) {
@@ -298,13 +325,18 @@ function handleInput( event ) {
         moveDown();
     }
 
+    // T
+    if ( event.keyCode == 84 ) {
+        toggleInputMode();
+    }
+
     // Numbers
     if ( ( event.keyCode >= 49 ) && ( event.keyCode <= 57 ) ) {
-        if ( event.shiftKey ) {
-            toggleTick( event.keyCode - 48 );
+        if ( guessMode ) {
+            playNumber( event.keyCode - 48);
         }
         else {
-            playNumber( event.keyCode - 48);
+            toggleTick( event.keyCode - 48 );
         }
     }
 
