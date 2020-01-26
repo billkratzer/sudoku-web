@@ -1,3 +1,5 @@
+/* Global styles */
+
 body {
     padding: 0;
     margin: 0;
@@ -9,94 +11,7 @@ div {
     margin: 0;
 }
 
-#game_area {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #9FB1BC;
-}
-
-#side_panel {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    border: solid white 4px;
-    margin-left: 40px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-#difficulty_panel_header {
-    font-size: 16px;
-    padding: 4px;
-    background-color: #2F3D56;
-    color: #88A2AF;
-}
-
-#difficulty_panel_value {
-    font-size: 24px;
-    padding: 4px;
-    color: #2F3D56;
-}
-
-#timer_panel_header {
-    font-size: 16px;
-    padding: 4px;
-    border-top: solid white 4px;
-    background-color: #2F3D56;
-    color: #88A2AF;
-}
-
-#timer_panel_value {
-    font-size: 24px;
-    padding: 4px;
-    color: #2F3D56;
-}
-
-#new_game_panel {
-    display: block;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #9FB1BC;
-    font-family: 'Open Sans', sans-serif;
-}
-
-
-#new_game_panel h1 {
-    font-weight: bold;
-    font-size: 36px;
-    text-align: center;
-}
-
-#new_game_panel h2 {
-    text-align: center;
-}
-
-#diff_buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.diff_button {
-    font-size: 20px;
-    padding: 5px 20px;
-    margin: 10px;
-    background-color: #2F3D56;
-    color: #9FB1BC;
-
-}
-
-.diff_button:hover {
-    color: #fff;
-    cursor: pointer;
-}
+/* Header and Footer Styles */
 
 header {
     width: 100%;
@@ -171,6 +86,104 @@ footer a:visited {
     padding-right: 20px;
 }
 
+
+/* Game Area Styles */
+
+#game_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #9FB1BC;
+}
+
+#side_panel {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border: solid white 4px;
+    margin-left: 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#difficulty_panel_header {
+    font-size: 16px;
+    padding: 4px;
+    background-color: #2F3D56;
+    color: #88A2AF;
+}
+
+#difficulty_panel_value {
+    font-size: 24px;
+    padding: 4px;
+    color: #2F3D56;
+}
+
+#timer_panel_header {
+    font-size: 16px;
+    padding: 4px;
+    border-top: solid white 4px;
+    background-color: #2F3D56;
+    color: #88A2AF;
+}
+
+#timer_panel_value {
+    font-size: 24px;
+    padding: 4px;
+    color: #2F3D56;
+}
+
+
+/* New Game Panel */
+
+#new_game_panel {
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #9FB1BC;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#new_game_panel h1 {
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+
+#new_game_panel h2 {
+    text-align: center;
+}
+
+#diff_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.diff_button {
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 10px;
+    background-color: #2F3D56;
+    color: #9FB1BC;
+
+}
+
+.diff_button:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/* Modal Styles */
 
 .modal {
     display: none; /* Hidden by default */
