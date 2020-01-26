@@ -1961,7 +1961,8 @@
 
         $( "#new_game_panel").hide();
         $( "#game_area" ).show();
-        $( "#difficulty_panel_value").html( capitalize( difficulty ) );
+        $( "#difficulty_panel_value" ).html( capitalize( difficulty ) );
+        $( "#timer_panel_value" ).html( "00:00:00" );
 
         startTime = new Date();
 
