@@ -243,3 +243,8 @@ footer a:visited {
     justify-content: center;
     flex-direction: row;
 }
+
+#solved_modal .modal-footer {
+    justify-content: center;
+    flex-direction: row;
+}

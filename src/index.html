@@ -1794,6 +1794,27 @@
 
 </div>
 
+<div id="solved_modal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-title">
+            Puzzled Solved!
+            <span class="close-x close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>
+                You solved the puzzle!
+            </p>
+            <p>
+                Your time: <div id="solve_time"></div>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <div id="play_new_puzzle_button" class="modal-button">Play A New Puzzle</div>
+        </div>
+    </div>
+
+</div>
 
 
 <footer>
@@ -1819,6 +1840,12 @@
         });
 
         $( "#confirm_new_game_button" ).click(function() {
+            modal.hide();
+            $( "#game_area" ).hide();
+            $( "#new_game_panel").show();
+        });
+
+        $( "#play_new_puzzle_button" ).click(function() {
             modal.hide();
             $( "#game_area" ).hide();
             $( "#new_game_panel").show();
@@ -1871,6 +1898,11 @@
 
     function showConfirm() {
         modal = $("#confirm_modal");
+        modal.show();
+    }
+
+    function showSolved() {
+        modal = $("#solved_modal");
         modal.show();
     }
 

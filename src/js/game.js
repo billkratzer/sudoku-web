@@ -155,7 +155,7 @@ function playNumber( n ) {
     }
 
     if ( board.solved() ) {
-        alert("solved!");
+        showSolved();
     }
 }
 
@@ -272,6 +272,8 @@ function drawBoard() {
             }
             else {
                 $( selector ).removeClass( "clue" );
+                let tickSelector = "#square_" + major + "_" + minor + " .tick";
+                $( tickSelector ).show();
             }
             $( selector ).html( littleSquare.guess );
 
@@ -285,6 +287,7 @@ function init( difficulty ) {
     //let puzzle = "2...7......95.186...6..4..2.4..89.23.6.....4...5.3.91.3...186.4.57..3...1.42.5.7.";
 
     let puzzle = getPuzzle( difficulty );
+    puzzle = "5.3.87249849521637267349581158463972974218365326795418782934156635172894491856723";
     board = new Board(puzzle);
 
     drawBoard();
