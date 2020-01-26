@@ -282,7 +282,9 @@ function drawBoard() {
 }
 
 function handleInput( event ) {
-    console.log(event.which + ":" + event.key + ":" + event.keyCode);
+    // console.log(event.which + ":" + event.key + ":" + event.keyCode);
+
+    // Arrow Keys
     if ( event.keyCode == 37) {
         moveLeft();
     }
@@ -295,6 +297,8 @@ function handleInput( event ) {
     if ( event.keyCode == 40) {
         moveDown();
     }
+
+    // Numbers
     if ( ( event.keyCode >= 49 ) && ( event.keyCode <= 57 ) ) {
         if ( event.shiftKey ) {
             toggleTick( event.keyCode - 48 );
@@ -303,6 +307,8 @@ function handleInput( event ) {
             playNumber( event.keyCode - 48);
         }
     }
+
+    // Space
     if ( event.keyCode == 32 ) {
         if ( event.shiftKey ) {
             toggleAllTicks();
