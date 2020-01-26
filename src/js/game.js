@@ -281,6 +281,38 @@ function drawBoard() {
     }
 }
 
+function handleInput( event ) {
+    // console.log(event.which + ":" + event.key + ":" + event.keyCode);
+    if ( event.keyCode == 37) {
+        moveLeft();
+    }
+    if ( event.keyCode == 38) {
+        moveUp();
+    }
+    if ( event.keyCode == 39) {
+        moveRight();
+    }
+    if ( event.keyCode == 40) {
+        moveDown();
+    }
+    if ( ( event.keyCode >= 49 ) && ( event.keyCode <= 57 ) ) {
+        if ( event.shiftKey ) {
+            toggleTick( event.keyCode - 48 );
+        }
+        else {
+            playNumber( event.keyCode - 48);
+        }
+    }
+    if ( event.keyCode == 32 ) {
+        if ( event.shiftKey ) {
+            toggleAllTicks();
+        }
+        else {
+            eraseSquare();
+        }
+    }
+}
+
 function init( difficulty ) {
     //let  puzzle = "5...8..49...5...3..673....115..........2.8..........187....415..3...2...49..5...3";
     //let puzzle = "5.3.87249849521637267349581158463972974218365326795418782934156635172894491856723";
@@ -292,43 +324,14 @@ function init( difficulty ) {
 
     drawBoard();
 
-    $( "#board" ).focus();
+    //$( "#board" ).focus();
+    document.getElementById('board').focus();
+    setSelectedId( "square_1_1" );
 
     $( ".little_square" ).click( function(event) {
         console.log("id: " + this.id);
         setSelectedId( this.id );
     });
 
-    $( "#board ").keydown( function(event) {
-       // console.log(event.which + ":" + event.key + ":" + event.keyCode);
-       if ( event.keyCode == 37) {
-           moveLeft();
-       }
-        if ( event.keyCode == 38) {
-            moveUp();
-        }
-        if ( event.keyCode == 39) {
-            moveRight();
-        }
-        if ( event.keyCode == 40) {
-            moveDown();
-        }
-        if ( ( event.keyCode >= 49 ) && ( event.keyCode <= 57 ) ) {
-            if ( event.shiftKey ) {
-                toggleTick( event.keyCode - 48 );
-            }
-            else {
-                playNumber( event.keyCode - 48);
-            }
-        }
-        if ( event.keyCode == 32 ) {
-            if ( event.shiftKey ) {
-                toggleAllTicks();
-            }
-            else {
-                eraseSquare();
-            }
-        }
-    });
 }
 

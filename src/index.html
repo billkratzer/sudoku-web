@@ -1677,7 +1677,20 @@
             </div>
         </div>
     </div>
-
+    <div id="side_panel">
+        <div id="difficulty_panel">
+            <div id="difficulty_panel_header">
+                Difficulty
+            </div>
+            <div id="difficulty_panel_value"></div>
+        </div>
+        <div id="timer_panel">
+            <div id="timer_panel_header">
+                Time Elapsed
+            </div>
+            <div id="timer_panel_value"></div>
+        </div>
+    </div>
 
 </div>
 
@@ -1806,7 +1819,7 @@
                 You solved the puzzle!
             </p>
             <p>
-                Your time: <div id="solve_time"></div>
+                Your time: <div id="solved_time"></div>
             </p>
         </div>
         <div class="modal-footer">
@@ -1831,8 +1844,14 @@
 
 <script>
     var modal = null;
+    var startTime = null;
+    var timer = null;
 
     $(function() {
+        $("#game_area").hide();
+
+        $( "body").keydown( handleInput );
+
         $( ".close" ).click(function()  {
             if ( modal ) {
                 modal.hide();
@@ -1879,11 +1898,52 @@
         }
     }
 
+    function capitalize( s ) {
+        if (typeof s !== 'string') {
+            return ''
+        }
+        else {
+            return s.charAt(0).toUpperCase() + s.slice(1)
+        }
+    }
+
+    function zeroPad(num, size) {
+        var s = num + "";
+        while ( s.length < size ) {
+            s = "0" + s;
+        }
+        return s;
+    }
+
+    function getElapsedTimeFormatted() {
+        let endTime = new Date();
+        let diffSeconds = Math.round( (endTime - startTime) / 1000 );
+
+        let elapsedHours = Math.floor( diffSeconds / ( 60 * 60) );
+        let elapsedMinutes = Math.floor( diffSeconds / 60 ) - elapsedHours * 60;
+        let elapsedSeconds = diffSeconds - ( elapsedHours * 60 * 60 ) - ( elapsedMinutes * 60 );
+
+        return zeroPad( elapsedHours, 2 ) + ":" + zeroPad( elapsedMinutes, 2 ) + ":" + zeroPad( elapsedSeconds, 2);
+    }
+
+    function updateTimeElapsed() {
+        $( "#timer_panel_value").html( getElapsedTimeFormatted() );
+    }
+
     function startGame( difficulty ) {
         init( difficulty );
 
         $( "#new_game_panel").hide();
         $( "#game_area" ).show();
+        $( "#difficulty_panel_value").html( capitalize( difficulty ) );
+
+        startTime = new Date();
+
+        if ( timer ) {
+            clearInterval( timer );
+        }
+        timer = setInterval(updateTimeElapsed, 1000);
+        console.log("Timer set!");
     }
 
     function showAbout() {
@@ -1902,6 +1962,12 @@
     }
 
     function showSolved() {
+        if ( timer ) {
+            clearInterval( timer );
+        }
+
+        $( "#solved_time" ).html( getElapsedTimeFormatted() );
+
         modal = $("#solved_modal");
         modal.show();
     }
