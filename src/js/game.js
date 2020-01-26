@@ -66,7 +66,7 @@ function moveLeft() {
     let x = c.x;
     let y = c.y;
     if (x < 1) {
-        return;
+        x = 8;
     }
     else {
         x = x - 1;
@@ -83,7 +83,7 @@ function moveRight() {
     let x = c.x;
     let y = c.y;
     if (x > 7) {
-        return;
+        x = 0;
     }
     else {
         x = x + 1;
@@ -100,7 +100,7 @@ function moveUp() {
     let x = c.x;
     let y = c.y;
     if (y < 1) {
-        return;
+        y = 8;
     }
     else {
         y = y - 1;
@@ -118,7 +118,7 @@ function moveDown() {
     let x = c.x;
     let y = c.y;
     if (y > 7) {
-        return;
+        y = 0;
     }
     else {
         y = y + 1;
@@ -324,14 +324,8 @@ function init( difficulty ) {
 
     drawBoard();
 
-    //$( "#board" ).focus();
     document.getElementById('board').focus();
     setSelectedId( "square_1_1" );
-
-    $( ".little_square" ).click( function(event) {
-        console.log("id: " + this.id);
-        setSelectedId( this.id );
-    });
 
 }
 
