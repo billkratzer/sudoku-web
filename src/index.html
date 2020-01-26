@@ -1819,7 +1819,7 @@
                 You solved the puzzle!
             </p>
             <p>
-                Your time: <div id="solved_time"></div>
+                Your time: <span id="solved_time"></span>
             </p>
         </div>
         <div class="modal-footer">
@@ -1848,9 +1848,15 @@
     var timer = null;
 
     $(function() {
+
         $("#game_area").hide();
 
         $( "body").keydown( handleInput );
+
+
+        $( ".little_square" ).click( function(event) {
+            setSelectedId( this.id );
+        });
 
         $( ".close" ).click(function()  {
             if ( modal ) {
@@ -1915,6 +1921,26 @@
         return s;
     }
 
+    function getPrettyElapsedTime() {
+        let endTime = new Date();
+        let diffSeconds = Math.round( (endTime - startTime) / 1000 );
+
+        let elapsedHours = Math.floor( diffSeconds / ( 60 * 60) );
+        let elapsedMinutes = Math.floor( diffSeconds / 60 ) - elapsedHours * 60;
+        let elapsedSeconds = diffSeconds - ( elapsedHours * 60 * 60 ) - ( elapsedMinutes * 60 );
+
+        let pretty = "";
+        if (elapsedHours > 0) {
+            pretty = pretty + elapsedHours + " hours, ";
+        }
+        if ((elapsedHours > 0) || (elapsedMinutes > 0)) {
+            pretty = pretty + elapsedMinutes + " minutes, ";
+        }
+        pretty = pretty + elapsedSeconds + " seconds. ";
+
+        return pretty;
+    }
+
     function getElapsedTimeFormatted() {
         let endTime = new Date();
         let diffSeconds = Math.round( (endTime - startTime) / 1000 );
@@ -1966,7 +1992,7 @@
             clearInterval( timer );
         }
 
-        $( "#solved_time" ).html( getElapsedTimeFormatted() );
+        $( "#solved_time" ).html( getPrettyElapsedTime() );
 
         modal = $("#solved_modal");
         modal.show();
