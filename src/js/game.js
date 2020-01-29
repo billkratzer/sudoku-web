@@ -287,6 +287,16 @@ function drawBoard() {
                 let tickSelector = "#square_" + major + "_" + minor + " .tick";
                 $( tickSelector ).show();
             }
+            let ticks = littleSquare.ticks;
+            for ( var i = 0; i < ticks.length; i++ ) {
+                var tickIdSelector = "#tick_" + major + "_" + minor + "_" + ticks[i].number;
+                if ( ticks[i].ticked ) {
+                    $( tickIdSelector ).addClass( "ticked" );
+                }
+                else {
+                    $( tickIdSelector ).removeClass( "ticked" );
+                }
+            }
             $( selector ).html( littleSquare.guess );
 
         }
@@ -375,7 +385,9 @@ function init( difficulty ) {
     //let puzzle = "2...7......95.186...6..4..2.4..89.23.6.....4...5.3.91.3...186.4.57..3...1.42.5.7.";
 
     let puzzle = getPuzzle( difficulty );
-    // puzzle = "5.3.87249849521637267349581158463972974218365326795418782934156635172894491856723";
+    // puzzle = "5.3.8724984952163726734958
+    // 1158463972974218365326795418782934156635172894491856723";
+    guessMode = true;
     board = new Board(puzzle);
 
     drawBoard();
